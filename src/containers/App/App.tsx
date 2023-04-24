@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DefaultPage />} />
           <Route
-            path="/custom-field"
+            path="/custom-field-dynamic-url"
             element={
               <Suspense>
                 <CustomFieldExtensionProvider>
