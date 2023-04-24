@@ -17,10 +17,10 @@ To use the Dynamic URL custom field follow the below steps.
 ![My Image](public/dynamicurl/content_model.png)
 
 The app is hardcoded and uses the following has to be followed:
-5. This field only works after an entry has been ***saved**
-6. Category (category) field that prepends to the title
-7. Title (title) a default field in Contentstack
-8.  URL (url) a default field in Contentstakc
+1. This field only works after an entry has been ***saved**
+2. Category (category) field that prepends to the title
+3. Title (title) a default field in Contentstack
+4.  URL (url) a default field in Contentstakc
 
 
 
