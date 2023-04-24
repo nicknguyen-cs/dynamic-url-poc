@@ -1,63 +1,29 @@
-# Contentstack Marketplace App Boilerplate
 
-## Provider
+#  Contentstack Marketplace App Boilerplate
 
-`<MarketplaceAppProvider>`
+  This project assumes you have a project set up in the Developer Hub already.
 
-This provider is responsible for the following actions
+##  Dynamic URL
 
-- Initialize the contentstack SDK
-- Make the SDK instance available via hooks to avoid props drilling
-- Set global properties for Analytics and Error tracking
-- Send "App Initialized / Failed" event
+To use the Dynamic URL custom field follow the below steps. 
+1. Create a custom field app location
+   ![My Image](public/dynamicurl/app-location.png)
 
-## Hooks
+2. Create the custom field route based on the pathing inside your application. This example uses `/custom-field-dynamic-url` and the type is `Text`
+![My Image](public/dynamicurl/custom_field.png)
 
-- useAppConfig
-- useAppLocation
-- useAppSdk
-- useCustomField
-- useEntry
-- useFrame
-- useHostUrl
-- useInstallationData
-- useSdkDataByPath
+3. Go to your content model and create a custom field and select the custom field you just created
+![My Image](public/dynamicurl/content_model.png)
 
-## Routes
-
-Each route represents one location. It is recommended to lazy load the route components to reduce the bundle
-size. 
-
-#### Adding new route
-
-- Create a new Route component inside route. Use default export
-  - Inside `App.tsx`, lazy load the route component.  
-    - eg: `const CustomFieldExtension = React.lazy(() => import("./routes/CustomField"))`
-  - Add the route wrapped inside `Suspense`. 
-    - Eg: ``` <Route path="/new" element={<Suspense><CustomFieldExtension /></Suspense>} />```
-
-## Testing
-
-- All e2e test files are stored in e2e folder
-- Create a `.env` file in the root directory & add environment variables as shown in `.env.sample` file.
-- Please refer the below commands to run e2e tests locally and setup the perquisites before running them.
-- `Note`: To run the below commands make sure the app is running in the background i.e on port `http://localhost:3000`
-
-  ```
-    "test:chrome": "npx playwright test --config=playwright.config.ts --project=Chromium",
-    "test:firefox": "npx playwright test --config=playwright.config.ts --project=firefox",
-    "test:chrome-headed": "npx playwright test --headed --config=playwright.config.ts --project=Chromium",
-    "test:firefox-headed": "npx playwright test --headed --config=playwright.config.ts --project=firefox" 
-  ```
-
-- Unit & integration tests are stored in `src/__tests__` folder
-- run `npm run test` to run unit and integration tests
+The app is hardcoded and uses the following has to be followed:
+1. This field only works after an entry has been ***saved**
+5. Category (category) field that prepends to the title
+6. Title (title) a default field in Contentstack
+7.  URL (url) a default field in Contentstakc
 
 
-## Styling
 
-- This setup uses basic CSS for styling
-
-## Reference to documentation
+##  References
 
 - [Marketplace App Boilerplate](https://www.contentstack.com/docs/developers/developer-hub/marketplace-app-boilerplate/)
+- [Marketplace Boiler Plate](https://github.com/contentstack/marketplace-app-boilerplate)
